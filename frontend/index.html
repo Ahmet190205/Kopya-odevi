@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PDF Upload</title>
+    <style>
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .btn {
+            padding: 8px 15px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #0056b3;
+        }
+        #status {
+            margin-top: 15px;
+            padding: 10px;
+        }
+        #welcomeMessage {
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>PDF Upload Sistemi</h1>
+        
+        <div id="welcomeMessage"></div>
+        
+        <div id="loginForm">
+            <h2>Giriş Yap</h2>
+            <div class="form-group">
+                <label for="username">Kullanıcı Adı:</label>
+                <input type="text" id="username" name="username">
+            </div>
+            <div class="form-group">
+                <label for="password">Şifre:</label>
+                <input type="password" id="password" name="password">
+            </div>
+            <button class="btn" onclick="login()">Giriş Yap</button>
+        </div>
+
+        <div id="uploadForm" style="display: none;">
+            <h2>PDF Yükle</h2>
+            <div class="form-group">
+                <label for="pdfFile">PDF Dosyası Seç:</label>
+                <input type="file" id="pdfFile" accept=".pdf">
+            </div>
+            <button class="btn" onclick="uploadPdf()">Yükle</button>
+        </div>
+
+        <button id="logoutBtn" class="btn" onclick="logout()" style="display: none;">Çıkış Yap</button>
+        
+        <div id="status"></div>
+    </div>
+
+    <script src="client.js"></script>
+</body>
+</html>
